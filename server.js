@@ -16,8 +16,8 @@ const db = require('./config/keys').mongoURI;
 // connect to db
 
 mongoose
-	.connect(db, { useNewUrlParser: true })
-	.then(() => console.log('mongo connected'))
+	.connect(db, { useNewUrlParser: true, useUnifiedTopology: true  })
+	.then(() => console.log('mongodb connected'))
 	.catch(err => console.log(err));
 
 app.get('/', (req, res) => res.send('Hello Biatch'));
